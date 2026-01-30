@@ -662,25 +662,10 @@
   flex-wrap: wrap;
   gap: 10px;
   align-items: center;
+  justify-content: center; /* 👈 THIS is the key line */
 }
 
-/* ================================
-   OTHER PROJECTS
-================================ */
 
-.other-projects {
-  margin-top: 36px;
-  padding-top: 8px;
-}
-
-.other-title {
-  margin: 0;
-}
-
-.other-subtitle {
-  margin: 6px 0 0;
-  color: rgba(232, 237, 247, 0.70);
-}
 
 /* ================================
    RESPONSIVE
