@@ -1,12 +1,73 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Joe Seabrook | Portfolio</title>
-  </head>
-  <body>
-    <h1>Joe Seabrook</h1>
-    <p>Django Developer • SaaS Builder • Web2Phone</p>
-  </body>
-</html>
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Home | Joe Seabrook{% endblock %}
+
+{% block content %}
+  <section class="hero" id="top">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+  </div>
+
+  <div class="hero-inner hero-grid">
+    <!-- LEFT: your existing content -->
+    <div class="hero-left">
+      <p class="hero-kicker reveal" style="--d: 0ms;">Hi, I’m</p>
+
+      <h1 class="hero-title reveal" style="--d: 80ms;">Joe Seabrook</h1>
+
+      <p class="hero-subtitle reveal" style="--d: 160ms;">
+        Full-Stack Web Developer building practical, production-ready web applications.
+      </p>
+
+      <ul class="hero-tags reveal" style="--d: 240ms;" aria-label="Primary skills">
+        <li>Django</li><li>DRF</li><li>JavaScript</li><li>Stripe</li><li>Deployment</li>
+      </ul>
+
+      <div class="hero-cta reveal" style="--d: 320ms;">
+        <a class="btn btn-primary" href="#projects">View Projects</a>
+        <a class="btn btn-ghost" href="{% static 'cv/Joe-Seabrook-CV.pdf' %}" target="_blank" rel="noopener">Download CV</a>
+        <a class="btn btn-link" href="#contact">Contact</a>
+      </div>
+
+      <div class="hero-proof reveal" style="--d: 400ms;">
+        <span>✔ SaaS (Web2Phone)</span>
+        <span>✔ Payments + APIs (Kicassoo)</span>
+        <span>✔ Live deployments</span>
+      </div>
+    </div>
+
+    <!-- RIGHT: hero visual -->
+    <div class="hero-right reveal" style="--d: 220ms;" aria-hidden="true">
+      <div class="hero-card">
+        <div class="card-top">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+          <span class="card-title">live-preview</span>
+        </div>
+
+        <div class="terminal">
+          <div class="line"><span class="prompt">$</span> django-admin startproject portfolio</div>
+          <div class="line"><span class="prompt">$</span> python manage.py runserver</div>
+          <div class="line ok">System check identified no issues (0 silenced).</div>
+          <div class="line"><span class="prompt">$</span> Deploying… <span class="cursor"></span></div>
+
+          <div class="stack">
+            <span class="pill">Django</span>
+            <span class="pill">DRF</span>
+            <span class="pill">PostgreSQL</span>
+            <span class="pill">Stripe</span>
+            <span class="pill">Nginx</span>
+          </div>
+        </div>
+
+        <div class="glow" aria-hidden="true"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% endblock %}
