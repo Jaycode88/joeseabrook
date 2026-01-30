@@ -6,26 +6,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>{% block title %}Joe Seabrook | Portfolio{% endblock %}</title>
+    <link rel="icon" href="{% static 'images/favicon.svg' %}" type="image/svg+xml">
 
-    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    {% block extra_css %}{% endblock %}
 
 
     {% block extra_head %}{% endblock %}
   </head>
 
   <body>
-    
+    <nav class="nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a class="nav-brand" href="#top" aria-label="Go to top">
+      <span class="nav-brand-mark" aria-hidden="true">JS</span>
+      <span class="nav-brand-text">Joe Seabrook</span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="nav-toggle-bar" aria-hidden="true"></span>
+      <span class="nav-toggle-bar" aria-hidden="true"></span>
+      <span class="nav-toggle-bar" aria-hidden="true"></span>
+    </button>
+
+    <div class="nav-menu" id="nav-menu">
+      <a class="nav-link" href="#projects">Projects</a>
+      <a class="nav-link" href="#about">About</a>
+      <a class="nav-link" href="#skills">Skills</a>
+      <a class="nav-link nav-link--cta" href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
 
     <main>
       {% block content %}{% endblock %}
     </main>
 
-    <footer>
-      <p>© {% now "Y" %} Joe Seabrook</p>
+    <footer class="site-footer">
+    <div class="footer-inner">
+        <p class="footer-left">
+        © {% now "Y" %} Joe Seabrook
+        </p>
+
+        <p class="footer-right">
+        Hosted by
+        <a href="https://jaycode.co.uk"
+            target="_blank"
+            rel="noopener"
+            class="footer-host">
+            <img
+            src="{% static 'images/jaycode-logo.png' %}"
+            alt="JayCode"
+            class="footer-logo">
+        </a>
+        </p>
+    </div>
     </footer>
 
-    {% block extra_js %}{% endblock %}
+
+
     <script src="{% static 'js/main.js' %}"></script>
+    {% block extra_js %}{% endblock %}
 
   </body>
 </html>

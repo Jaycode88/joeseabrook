@@ -17,3 +17,29 @@
     });
   })();
 
+(function () {
+  const toggle = document.querySelector(".nav-toggle");
+  const menu = document.querySelector("#nav-menu");
+  if (!toggle || !menu) return;
+
+  function setOpen(open) {
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    menu.classList.toggle("is-open", open);
+  }
+
+  toggle.addEventListener("click", () => {
+    const isOpen = menu.classList.contains("is-open");
+    setOpen(!isOpen);
+  });
+
+  menu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => setOpen(false));
+  });
+
+  // Close menu if you click outside it
+  document.addEventListener("click", (e) => {
+    if (!menu.classList.contains("is-open")) return;
+    if (menu.contains(e.target) || toggle.contains(e.target)) return;
+    setOpen(false);
+  });
+})();
